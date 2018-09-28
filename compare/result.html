@@ -1,15 +1,4 @@
-#!/usr/bin/env python
-#encoding:utf8
 
-import sys,os,time,re
-import json
-
-class SilinHTML():
-    def __init__(self,result_html):
-        self.html=result_html
-    
-    def html_header(self,dir1,dir2):
-        HtmlHeader='''
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -64,26 +53,12 @@ class SilinHTML():
             <table>
                 <thead>
                     <tr>
-                        <th>%s</th> 
-                        <th>%s</th>
+                        <th>D:\work\c\a</th> 
+                        <th>D:\work\c\b</th>
                         <th>结果</th>  
                     </tr>
                 </thead>
                 <tbody>
-        ''' %(dir1,dir2)
-        self.WriteToHtml(HtmlHeader)
-    def html_bottom(self):
-        HtmlBottom='''
-        </tbody>
-        </table>
-        </body>
-        </html>
-        '''
-        self.WriteToHtml(HtmlBottom)
-    def WriteResult(self,result):
-        tds='\n<tr><td>%s</td><td>%s</td><td class=%s><a href="%s" target="_blank">%s</a></td></tr>' %(result[0],result[1],result[2],result[3],result[2])
-        self.WriteToHtml(tds)
-
-    def WriteToHtml(self,Connect):
-        with open(self.html,"a") as f:
-            f.write(Connect)
+        
+<tr><td>test\test.2.c</td><td></td><td class=notExist><a href="" target="_blank">notExist</a></td></tr>
+<tr><td>test1.c</td><td>test1.c</td><td class=same><a href="D:\work\python\compare\Silinhtml\2.html" target="_blank">same</a></td></tr>
